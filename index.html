@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" ng-app="toDoApp">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="controllers.js"></script>
+  </head>
+  <body>
+    <div ng-controller="ToDoController as controller">
+      <li ng-repeat="todo in controller.todos">
+        {{todo.text}}: {{todo.completed ? "completed" : "not completed"}}
+      </li>
+    </div>
+  </body>
+</html>
