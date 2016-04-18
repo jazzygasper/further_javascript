@@ -1,9 +1,7 @@
-toDoApp.controller('ToDoController', ['todoFactory', function(todoFactory) {
+toDoApp.controller('ToDoController', ['todoFetcher', 'todoFactory', function(todoFetcher, todoFactory) {
   var self = this;
 
-    self.todos = [
-      {text:"one", completed:true},
-      {text:"two", completed:false}];
+    self.todos = todoFetcher.index();
 
     self.addToDo = function(todoText) {
       self.todos.push(new Todo(todoText));
